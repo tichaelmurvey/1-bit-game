@@ -6,7 +6,7 @@ public class player : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
     //Set velocity as public var
-    public float playerSpeed = 10000f;
+    public float playerSpeed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class player : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             //Set direction of movement to be up
-            myRigidBody.velocity = new Vector2(0, 100);
+            myRigidBody.velocity = new Vector2(0, playerSpeed);
             
         } else {
             //Set direction to none
