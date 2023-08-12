@@ -15,15 +15,26 @@ public class player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        Vector2 playerVelocity = new Vector2(0, 0);
+        //Vertical movement
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             //Set direction of movement to be up
-            myRigidBody.velocity = new Vector2(0, playerSpeed);
-            
-        } else {
-            //Set direction to none
-            myRigidBody.velocity = new Vector2(0, 0);
-        }
+            playerVelocity.y = playerSpeed;
+        } else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+            //Set direction of movement to be down
+            playerVelocity.y = -playerSpeed;
+        } 
+        //Horizontal movement
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+            //Set direction of movement to be left
+            playerVelocity.x = -playerSpeed;
+        } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+            //Set direction of movement to be right
+            playerVelocity.x = playerSpeed;
+        } 
+        //Assign velocity to rigidbody
+        myRigidBody.velocity = playerVelocity;
     }
 }
