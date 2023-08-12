@@ -21,19 +21,23 @@ public class player : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             //Set direction of movement to be up
-            playerVelocity.y = playerSpeed;
+            playerVelocity.y = 1;
         } else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
             //Set direction of movement to be down
-            playerVelocity.y = -playerSpeed;
+            playerVelocity.y = -1;
         } 
         //Horizontal movement
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             //Set direction of movement to be left
-            playerVelocity.x = -playerSpeed;
+            playerVelocity.x = -1;
         } else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             //Set direction of movement to be right
-            playerVelocity.x = playerSpeed;
+            playerVelocity.x = 1;
         } 
+        //Normalise velocity
+        playerVelocity.Normalize();
+        //Multiply velocity by speed
+        playerVelocity *= playerSpeed;
         //Assign velocity to rigidbody
         myRigidBody.velocity = playerVelocity;
     }
