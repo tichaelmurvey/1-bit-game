@@ -14,6 +14,16 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
+    public void Heal (int healAmount)
+    {
+        currentHealth += healAmount;
+        //Check if health is over max
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthBar.SetHealth(currentHealth);
+    }
     public void TakeDamage(int damage)
     {
         //Check if player is invincible

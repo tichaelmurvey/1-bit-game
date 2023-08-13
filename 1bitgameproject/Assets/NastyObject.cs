@@ -20,9 +20,6 @@ public class NastyObject : MonoBehaviour
     void OnTriggerStay2D(Collider2D collision)
     {
         //Log to console
-        Debug.Log(collisionCount);
-        //Increment collision count
-        collisionCount++;
         // Get the object we collided with
         GameObject collidedWith = collision.gameObject;
         // Run the TakeDamage() function on the collided object
