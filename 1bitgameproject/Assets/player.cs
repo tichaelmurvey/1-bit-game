@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Rigidbody2D myRigidBody;
     //Set velocity as public var
     public float playerSpeed = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public HealthManager healthManager;
 
-    // Update is called once per frame
+
     void Update()
     {   
+
+        //Player health
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            healthManager.TakeDamage(1);
+        }
+        //Player movement
         Vector2 playerVelocity = new Vector2(0, 0);
         //Vertical movement
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -41,4 +44,5 @@ public class player : MonoBehaviour
         //Assign velocity to rigidbody
         myRigidBody.velocity = playerVelocity;
     }
+
 }
