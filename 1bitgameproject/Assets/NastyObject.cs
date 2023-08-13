@@ -5,6 +5,7 @@ using UnityEngine;
 public class NastyObject : MonoBehaviour
 {
     // Detect collision
+    int collisionCount = 0;
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Get the object we collided with
@@ -18,6 +19,10 @@ public class NastyObject : MonoBehaviour
     //Detect ongoing presence in trigger area
     void OnTriggerStay2D(Collider2D collision)
     {
+        //Log to console
+        Debug.Log(collisionCount);
+        //Increment collision count
+        collisionCount++;
         // Get the object we collided with
         GameObject collidedWith = collision.gameObject;
         // Run the TakeDamage() function on the collided object

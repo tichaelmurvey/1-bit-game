@@ -9,7 +9,11 @@ public class Player : MonoBehaviour
     public float playerSpeed = 1;
     public HealthManager healthManager;
 
-
+    void Start()
+    {
+        //Disable sleep mode
+        myRigidBody.sleepMode = RigidbodySleepMode2D.NeverSleep;
+    }
     void Update()
     {   
 
