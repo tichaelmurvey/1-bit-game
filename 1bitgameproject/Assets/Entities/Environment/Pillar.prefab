@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6856266875542283109}
   - component: {fileID: 6599143185760020482}
   - component: {fileID: 7796574486835010392}
+  - component: {fileID: 4816170657599837305}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -101,3 +102,42 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4816170657599837305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611468611553825385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 6d20cdb600000000e77691ea
+  m_ShapePath:
+  - {x: -0.3566426, y: -0.35664266, z: 0}
+  - {x: -0.47951066, y: -0.14633214, z: 0}
+  - {x: -0.48886, y: 0.109218, z: 0}
+  - {x: -0.39404017, y: 0.30989563, z: 0}
+  - {x: -0.22707695, y: 0.45202923, z: 0}
+  - {x: 0.00042501092, y: 0.5143585, z: 0}
+  - {x: 0.23727638, y: 0.44891274, z: 0}
+  - {x: 0.39715666, y: 0.31924498, z: 0}
+  - {x: 0.4678948, y: 0.18089676, z: 0}
+  - {x: 0.50529236, y: 0.053121686, z: 0}
+  - {x: 0.48347706, y: -0.16814733, z: 0}
+  - {x: 0.3753414, y: -0.34106034, z: 0}
+  - {x: 0.25597516, y: -0.42681396, z: 0}
+  - {x: 0.09391898, y: -0.49537617, z: 0}
+  - {x: -0.04632196, y: -0.50160915, z: 0}
+  - {x: -0.18032998, y: -0.467328, z: 0}
+  m_ShapePathHash: 1653015344
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 41118
