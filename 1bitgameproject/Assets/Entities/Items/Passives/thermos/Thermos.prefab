@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
-  beamAngle: 0
+  beamAngle: 1
   beamLength: 0
   beamDamage: 0
   playerSpeed: 0.5

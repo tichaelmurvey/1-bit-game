@@ -20,7 +20,7 @@ public class PassiveitemAffect : MonoBehaviour
             other.gameObject.GetComponent<HealthManager>().maxHealth += maxHealth;
             other.gameObject.GetComponent<HealthManager>().currentHealth += currentHealth;
             other.gameObject.GetComponent<Player>().playerSpeed += playerSpeed;
-
+            other.gameObject.GetComponent<Flashlight>().beamAngle += beamAngle;
             //Destroy item
             Destroy(gameObject);
         }
