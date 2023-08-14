@@ -23,8 +23,18 @@ public class PassiveitemAffect : MonoBehaviour
             other.gameObject.GetComponent<HealthManager>().currentHealth += currentHealth;
             other.gameObject.GetComponent<Player>().playerSpeed += playerSpeed;
             Light2D flashlight = other.gameObject.transform.Find("Flashlight").GetComponent<Light2D>();
-            flashlight.pointLightOuterAngle += beamAngle;
-            flashlight.pointLightInnerAngle += beamAngle;
+            //If change to angle is negative, check if beam angle is more than 10
+            if (beamAngle > 0 || flashlight.pointLightOuterAngle+beamAngle > 10)
+            {
+                flashlight.pointLightOuterAngle += beamAngle;
+                flashlight.pointLightInnerAngle += beamAngle;
+            } else if (flashlight.pointLightOuterAngle > 5) {
+                flashlight.pointLightOuterAngle = 5;
+                flashlight.pointLightInnerAngle = 5;
+            }
+
+            flashlight.pointLightOuterRadius += beamLength;
+            flashlight.pointLightInnerRadius += beamLength;
             //Destroy item
             Destroy(gameObject);
         }
