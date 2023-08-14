@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
 
 public class PassiveitemAffect : MonoBehaviour
 {
@@ -20,7 +22,9 @@ public class PassiveitemAffect : MonoBehaviour
             other.gameObject.GetComponent<HealthManager>().maxHealth += maxHealth;
             other.gameObject.GetComponent<HealthManager>().currentHealth += currentHealth;
             other.gameObject.GetComponent<Player>().playerSpeed += playerSpeed;
-            other.gameObject.GetComponent<Flashlight>().beamAngle += beamAngle;
+            Light2D flashlight = other.gameObject.transform.Find("Flashlight").GetComponent<Light2D>();
+            flashlight.pointLightOuterAngle += beamAngle;
+            flashlight.pointLightInnerAngle += beamAngle;
             //Destroy item
             Destroy(gameObject);
         }
