@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     public int maxHealth = 20;
     public int currentHealth;
     public HealthBar healthBar;
+    public DeathScreen deathScreen;
     public bool isInvincible = false;
     void Start()
     {
@@ -36,6 +37,8 @@ public class HealthManager : MonoBehaviour
         //Check if player is dead
         if (currentHealth <= 0)
         {
+            //Show death screen
+            deathScreen.Show();
             //Kill player
             Destroy(gameObject);
         }
