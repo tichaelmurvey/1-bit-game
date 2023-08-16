@@ -6,6 +6,7 @@ public class NastyObject : MonoBehaviour
 {
     // Detect collision
     int collisionCount = 0;
+    public int damage = 1;
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Get the object we collided with
@@ -13,7 +14,7 @@ public class NastyObject : MonoBehaviour
         // Run the TakeDamage() function on the collided object
         if (collidedWith.GetComponent<HealthManager>() != null)
         {
-            collidedWith.GetComponent<HealthManager>().TakeDamage(1);
+            collidedWith.GetComponent<HealthManager>().TakeDamage(damage);
         }
     }
     //Detect ongoing presence in trigger area
@@ -25,7 +26,7 @@ public class NastyObject : MonoBehaviour
         // Run the TakeDamage() function on the collided object
         if (collidedWith.GetComponent<HealthManager>() != null)
         {
-            collidedWith.GetComponent<HealthManager>().TakeDamage(1);
+            collidedWith.GetComponent<HealthManager>().TakeDamage(damage);
         }
     }
     

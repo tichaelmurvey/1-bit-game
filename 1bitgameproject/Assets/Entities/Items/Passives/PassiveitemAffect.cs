@@ -20,7 +20,7 @@ public class PassiveitemAffect : MonoBehaviour
         {
             //Update player stats with item stats
             other.gameObject.GetComponent<HealthManager>().maxHealth += maxHealth;
-            other.gameObject.GetComponent<HealthManager>().currentHealth += currentHealth;
+            other.gameObject.GetComponent<HealthManager>().Heal(currentHealth);
             other.gameObject.GetComponent<Player>().playerSpeed += playerSpeed;
             Light2D flashlight = other.gameObject.transform.Find("Flashlight").GetComponent<Light2D>();
             //If change to angle is negative, check if beam angle is more than 10
